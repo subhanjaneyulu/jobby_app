@@ -72,7 +72,7 @@ class Jobs extends Component {
     })
     const {employeeTypeList, minimumSalary, searchInput} = this.state
     const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${employeeTypeList.join()}&minimum_package=${minimumSalary}&search=${searchInput}`
-    
+
     const jwtToken = Cookies.get('jwt_token')
 
     const options = {
@@ -196,7 +196,6 @@ class Jobs extends Component {
       const filteredData = employeeTypeList.filter(
         eachItem => eachItem !== type,
       )
-      
 
       this.setState({employeeTypeList: filteredData}, this.getJobs)
     }

@@ -76,13 +76,13 @@ class JobItemDetails extends Component {
     const response = await fetch(url, options)
     if (response.ok === true) {
       const data = await response.json()
-      
+
       const updatedData = this.getFormattedData(data.job_details)
-     
+
       const updatedSimilarJobsData = data.similar_jobs.map(eachSimilarJob =>
         this.getFormattedSimilarData(eachSimilarJob),
       )
-      
+
       this.setState({
         jobData: updatedData,
         similarJobsData: updatedSimilarJobsData,
